@@ -1,0 +1,213 @@
+.tabel_form a{
+    text-decoration: none;
+    color: #fff;
+    font-weight: 800;
+}
+
+h1, h2{
+    text-align: center;
+    font-family: 'Quicksand', sans-serif;
+    color:#000;
+}
+.form, .dropBox{
+    background: -webkit-linear-gradient(bottom, #cce7f5, #5AB3E0 175px);
+    background: -moz-linear-gradient(bottom, #cce7f5, #5AB3E0 175px);
+    background: linear-gradient(bottom,#cce7f5, #5AB3E0 175px);
+    margin: 100px auto;
+    width: 50%;
+    text-align: center;
+    font-family: Tahoma, Geneva, sans-serif;
+    font-size: 14px;  
+    line-height: 24px;
+    font-weight: bold;
+    color: #09C;
+    text-decoration: none;
+    border-radius: 10px;
+    padding: 10px;
+    border: 1px solid #999;
+    border: inset 1px solid #333;
+    -webkit-box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.3);
+    -moz-box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.3);
+    box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.3);
+}
+
+input, #type{
+    padding: 10px;
+    margin:  20px;
+    width: 70%;
+    box-sizing: border-box;
+}
+.login{
+    padding: 15px;
+}
+.login input{
+    margin: 3%
+}
+.submit_add_car{
+    background: -webkit-linear-gradient(bottom, #E3F6C2,#5B9105 175px);
+    background: -moz-linear-gradient(bottom, #E3F6C2, #5B9105 175px);
+    background: linear-gradient(bottom,#E3F6C2, #5B9105 175px);    
+}
+.submit{  
+    background: -webkit-linear-gradient(bottom, #ddd,#fff 175px);
+    background: -moz-linear-gradient(bottom, #ddd, #fff 175px);
+    background: linear-gradient(bottom,#ddd, #fff 175px); 
+    color:#000; 
+}
+.admin{
+    display:flex;
+}
+.admin_form{
+    min-width:400px;
+    border-radius: 0;
+    margin: 40px auto;
+    padding:0px;
+}
+.admin input{
+    padding:5px;
+    margin:8px;
+}
+.dropBox{ 
+    margin-top: 20px;
+    background:#DBEFF9;
+    padding: 10px;
+    color:#000;
+    display:block; 
+    border-radius: 0;
+}
+
+.dropBox select{
+    width:300px;
+    padding: 15px 50px;
+}
+.logout{
+    font-size:22px;
+    font-family: verdana;
+    font-weight:800; 
+    width: 100px;
+    padding:7px;
+    position: fixed;
+    top: 4px;
+    right:20px;
+}
+.logout a{
+    text-decoration: none; 
+    color:red;
+    margin: 100px auto;
+    font-weight:800;
+
+}
+.admin_table form input{
+    margin:0;   
+
+}
+
+.input{
+    margin: 0;
+    background-color: red;
+}
+.admin_table{
+    border-collapse:collapse;
+    margin:100px auto;
+    border: 15px solid #D3D3D6;
+} 
+.admin_table th{
+    background-color: lightblue; 
+    padding: 20px;
+}
+.admin_table th, .admin_table td, #body input{
+    width: 120px;
+}
+#body input{
+    margin: 0;
+    border:none;
+    width: 100%;
+    text-align: center;
+}
+.update{
+    background-color:#709873;   
+    padding: 10px;
+    width: 100%;
+}
+.delete{
+    background-color:#D45D4E; 
+    padding: 10px;
+    width: 100%;
+}
+
+/*  xxxxxxx   */
+
+admin_xx{
+    padding:50px;
+    background-color:#eee;
+}
+#xx{ 
+    width: 80%;
+    margin:auto;
+    text-align: center;
+    padding: 0;
+}
+.admin_ul, .admin_ul_one{
+    display:flex;
+    list-style-type: none;
+    margin:0 auto;
+
+}
+.admin_ul li, .admin_ul_one li {
+    border: 1px solid #97999C;
+    margin:0;
+    width: 160px;
+    padding: 0;
+    text-align: center;
+}
+.admin_ul input{
+    border: none;
+    margin:0;
+    width: 160px;
+}
+.admin_ul_one li{
+    padding: 10px 0;
+    background-color: #B3CAF2;
+}
+.admin_ul_one li:nth-child(1),.admin_ul li:nth-child(1){
+    width:50px;
+}
+
+#map {
+    height: 100%;
+    padding: 0;
+}
+#find_town{
+    position: absolute;
+    left:5%;
+    display: flex;
+    z-index: 5;
+    background-color: #fff;
+    padding: 5px;
+    border: 1px solid #999;
+    text-align: center;
+    font-family: 'Roboto','sans-serif';
+    line-height: 30px;
+     background-color: rgba(247, 249, 250, .7);
+}
+#find_town input {
+    padding:5px;
+    background-color: rgba(247, 249, 250, 1);
+}
+@media only screen and (max-width : 979px) {
+
+.form{
+    width: 80%;
+}
+
+
+}
+@media only screen and (max-width : 480px) {
+
+.form{
+    width: 90%;
+    margin: 0 auto;
+}
+
+
+}

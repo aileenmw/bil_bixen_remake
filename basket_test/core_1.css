@@ -1,0 +1,96 @@
+#opgaven{
+    width: 60%;
+    margin:30px auto;
+}
+ul img, #list_icon{
+    height: 40px;
+}
+#list_icon{
+    display: none;
+    position: absolute;
+    right: 160px;
+    border-radius: 3px;
+}
+#theList p{
+    position: absolute;
+    right: 150px;
+    top: 60px;
+}
+#count{
+    background-color:red;
+    height: 20px; 
+    width: 20px;
+    border-radius:50%;
+    text-align: center;
+    font-size: 12px;
+    font-weight: 800;
+    position: absolute;
+    right: 160px;
+    top: 45px;
+    display: none;
+    color: #fff;
+}
+#theList{
+    position: relative;
+    width: 50%;
+    float: right;
+    /* margin: 5% 0; */
+    display: none;
+}
+
+.list_button{ 
+    float: right;
+    margin-right: 5%;
+    background-color: rgba(255,255,255,0);
+    padding: 0;
+}
+ul{
+    width: 80% !important;
+    margin: 5% auto;
+}
+.list-group-item{
+    min-height: 70px;
+}
+.btn btn-primary btn-lg{
+    margin: auto;
+}
+#item_button{
+    margin: 0  20%;
+}
+
+#listNBtn{
+    display: flex;
+    padding: 5%;
+    position:relative;
+}
+#btn_send,#btn_del{
+    background-color: #bada55;
+    border-radius: .3rem;
+    padding: 4px;
+    margin-left: 2%;
+    width: 80px;
+    position:absolute; 
+    right:120px;;
+}
+#btn_del{
+    background-color: tomato;
+     right:30px;
+}
+#theResponse{
+    background-color: lightgreen;
+}
+#theResponse h2{
+    text-align:center;
+    padding: 20px;
+}
+
+@media only screen and (max-width : 768px){
+    ul img{
+        height: 30px;
+    }
+    ul{
+        width: 100% !important;
+        padding: 0;
+        margin:70px 0;
+    }
+}

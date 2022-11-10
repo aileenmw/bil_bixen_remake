@@ -1,0 +1,162 @@
+<div id="map_wrapper">
+    <div id="map" style='min-height: 600px; background-color: skyblue;margin-bottom: -100px;'></div>
+</div>
+<!--link to page   https://developers.google.com/maps/documentation/javascript/mysql-to-maps?hl=de -->
+<script>
+    var customLabel = {
+        nytOgBrugt: {
+            label: 'B'
+        },
+        bar: {
+            nyt: 'N'
+        }
+    };
+
+    var address = [];
+
+    function initMap() {
+        var map = new google.maps.Map(document.getElementById('map'), {
+            center: new google.maps.LatLng(55.34194669999999, 10.320272899999964),
+            zoom: 8
+        });
+        var infoWindow = new google.maps.InfoWindow;
+
+        // Change this depending on the name of your PHP or XML file
+        downloadUrl('googleMapsAssets/dealership.xml', function (data) {
+            var xml = data.responseXML;
+            var markers = xml.documentElement.getElementsByTagName('marker');
+            Array.prototype.forEach.call(markers, function (markerElem) {
+                var name = markerElem.getAttribute('name');
+                address = markerElem.getAttribute('address');
+                var postal_code = markerElem.getAttribute('postal_code');
+                var town = markerElem.getAttribute('town');
+                var Mandag = markerElem.getAttribute('Mandag');
+                var Tirsdag = markerElem.getAttribute('Tirsdag');
+                var Onsdag = markerElem.getAttribute('Onsdag');
+                var Torsdag = markerElem.getAttribute('Torsdag');
+                var Fredag = markerElem.getAttribute('Fredag');
+                var Lørdag = markerElem.getAttribute('Lørdag');
+                var Søndag = markerElem.getAttribute('Søndag');
+                var open = markerElem.getAttribute('open');
+                var close = markerElem.getAttribute('close');
+                var type = markerElem.getAttribute('type');
+                var point = new google.maps.LatLng(
+                        parseFloat(markerElem.getAttribute('lat')),
+                        parseFloat(markerElem.getAttribute('lng')));
+
+                var infowincontent = document.createElement('div');
+                var strong = document.createElement('strong');
+                strong.textContent = name
+                infowincontent.appendChild(strong);
+                infowincontent.appendChild(document.createElement('br'));
+
+
+
+                var text = document.createElement('text');
+                text.textContent = address;
+                infowincontent.appendChild(text);
+                infowincontent.appendChild(document.createElement('br'));
+
+                var text2 = document.createElement('text2');
+                text2.textContent = postal_code + ' ' + town;
+                infowincontent.appendChild(text2);
+                infowincontent.appendChild(document.createElement('br'));
+                infowincontent.appendChild(document.createElement('br'));
+
+                var text3 = document.createElement('text3');
+                text3.textContent = 'Mandag : ' + Mandag;
+                infowincontent.appendChild(text3);
+                infowincontent.appendChild(document.createElement('br'));
+
+                var text4 = document.createElement('text4');
+                text4.textContent = 'Tirsdag : ' + Tirsdag;
+                infowincontent.appendChild(text4);
+                infowincontent.appendChild(document.createElement('br'));
+
+                var text5 = document.createElement('text5');
+                text5.textContent = 'Onsdag : ' + Onsdag;
+                infowincontent.appendChild(text5);
+                infowincontent.appendChild(document.createElement('br'));
+
+                var text6 = document.createElement('text6');
+                text6.textContent = 'Torsdag : ' + Torsdag;
+                infowincontent.appendChild(text6);
+                infowincontent.appendChild(document.createElement('br'));
+
+                var text7 = document.createElement('text7');
+                text7.textContent = 'Fredag  :  ' + Fredag;
+                infowincontent.appendChild(text7);
+                infowincontent.appendChild(document.createElement('br'));
+
+                var text8 = document.createElement('text8');
+                text8.textContent = 'Lørdag  : LUKKET';
+                infowincontent.appendChild(text8);
+                infowincontent.appendChild(document.createElement('br'));
+
+                var text9 = document.createElement('text9');
+                text9.textContent = 'Søndag  : LUKKET';
+                infowincontent.appendChild(text9);
+                infowincontent.appendChild(document.createElement('br'));
+
+                var btn = document.createElement("BUTTON");
+                btn.innerHTML = 'Find rute';
+                btn.className = 'btn_send';
+                btn.value = address + ',' + town;
+                infowincontent.appendChild(btn);
+
+
+                var icon = customLabel[type] || {};
+                var marker = new google.maps.Marker({
+                    map: map,
+                    position: point,
+                    label: icon.label
+                });
+                marker.addListener('click', function () {
+                    infoWindow.setContent(infowincontent);
+                    infoWindow.open(map, marker);
+
+                });
+
+
+            });
+        });
+    }
+
+    function downloadUrl(url, callback) {
+        var request = window.ActiveXObject ?
+                new ActiveXObject('Microsoft.XMLHTTP') :
+                new XMLHttpRequest;
+
+        request.onreadystatechange = function () {
+            if (request.readyState == 4) {
+                request.onreadystatechange = doNothing;
+                callback(request, request.status);
+            }
+        };
+
+        request.open('GET', url, true);
+        request.send(null);
+    }
+
+    function doNothing() {}
+
+
+    document.body.addEventListener('click', function (evt) {
+        if (evt.target.className === 'btn_send') {
+            var address = evt.target.value;
+            //alert(address);
+
+           var chars = {'æ': 'ae', 'ø': 'oe', 'å': 'aa', 'Æ': 'Ae', 'Ø': 'Oe', 'Å': 'Aa', ' ': '|'};
+            adresse = address.replace(/[æøåÆØÅ  ]/g, m => chars[m]);
+           
+            //alert('adressen før den bliver sendt' + adresse);
+            window.location.href = 'index.php?page=theRoute&address=' + adresse;
+
+        }
+    }, false);
+
+
+</script>
+<script async defer
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyASSmyQxuIBwK-7tVql-0Y5C7yYiC2cbyQ&callback=initMap">
+</script>

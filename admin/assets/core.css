@@ -1,0 +1,110 @@
+/*@font-face {
+    font-family:attack of the cucumbers;
+    src: url('attack of the cucumbers.ttf');
+}*/
+.wrapper{
+    padding: 5% 10% 10% 10%;
+    /*font-family:attack of the cucumbers;*/
+}
+.flex{
+    display: flex;
+}
+.logout, .top_btn{
+    width: 15%;
+    
+}
+.btn_box{
+    display: flex;
+    justify-content: space-between;
+    border: 1px solid lightslategray;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    height: 50px;
+    background-color: #eee;
+    margin: 0;
+}
+.btn_box a{
+    color: #000;
+    font-weight: 700;
+    font-size: 20px;
+}
+.btn_box btn{
+    border-radius: 0;
+}
+h1, h2{
+    text-align: center;
+    margin: 5% 0 0 0;
+    background-color: #ddd;
+    padding: 5% 0 2% 0 ;
+    border: 1px solid lightslategray;
+    width: 100%;
+    margin-top: 0;
+}
+h3{
+    color: tomato;
+    margin: auto;
+}
+.cap{
+    text-transform: capitalize;
+}
+.btn_link:hover{
+color: white;
+background-color: #97999C;
+}
+.reg_date{
+    font-size: 15px;
+    line-height: 25px;
+}
+.form-control{
+    background-color: #FFF;
+}
+.date_inp{
+    padding: 6px 8px;
+}
+.form_center{
+    text-align: center;
+}
+#update_form{
+    text-align: center;
+    background-color: #333;
+}
+.main-login{
+    margin: auto;
+}
+.row{
+    background-color: #333;
+    color: #FFF;
+    padding: 5%
+}
+#update_form{
+    padding: 8% 0;
+    background-color: #444;
+}
+.main-login{
+    width: 50%;
+}
+.custom-select{
+    width: 100%;
+}
+.selectpicker{
+    padding: 6.5px;
+    border-radius: 3px;
+    margin-top: 1px;
+}
+.label{
+    text-align: right;
+     line-height: 30px;
+}
+.radio-inline{
+    margin-bottom: 0;
+}
+.radio-inline{
+    margin-top: 5px;
+}
+#time_form{
+    padding-left: 5%;
+}
